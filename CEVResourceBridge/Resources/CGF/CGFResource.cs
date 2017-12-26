@@ -1,20 +1,30 @@
 using CEVResourceBridge.Resources;
 using System.Xml;
+using CEVResourceBridge.Utils;
 namespace CEVResourceBridge.Resources.CGF
 {
     public class CGFResource : IResource
     {
+        FileHeader_0x746 _header;
+        List<Chunk> _chunks;
         public CGFResource()
         {
-
+            _header = new FileHeader_0x746();
+            _chunks = new List<Chunk>();
         }
 
-        public void fromOrginBytes(byte[] input)
+        public void fromOrginBytes(ByteArray input)
         {
-
+            _header.read(input);
+            for (int i = 0; i < _header.chunkCount; i++)
+            {
+                __chunks __chunk = new Chunk();
+                __chunk.read(input);
+                _chunks.Add(__chunk);
+            }
         }
 
-        public void fromCustomBytes(byte[] input)
+        public void fromCustomBytes(ByteArray input)
         {
 
         }
@@ -24,12 +34,12 @@ namespace CEVResourceBridge.Resources.CGF
             return null;
         }
 
-        public byte[] toOrginBytes()
+        public ByteArray toOrginBytes()
         {
             return null;
         }
 
-        public byte[] toCustomBytes()
+        public ByteArray toCustomBytes()
         {
             return null;
         }

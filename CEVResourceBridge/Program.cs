@@ -4,6 +4,7 @@ using System.IO;
 using NDesk.Options;
 using CEVResourceBridge.Resources;
 using CEVResourceBridge.Resources.CGF;
+using CEVResourceBridge.Utils;
 
 namespace CEVResourceBridge
 {
@@ -54,7 +55,7 @@ namespace CEVResourceBridge
                     case ResourceType.CGF:
                         {
                             __resource = new CGFResource();
-                            __resource.fromOrginBytes(__inputBytes);
+                            __resource.fromOrginBytes(new ByteArray(__inputBytes));
                             break;
                         }
                 }
@@ -65,7 +66,7 @@ namespace CEVResourceBridge
                 {
                     case ResourceType.CGF:
                         {
-                            __outputBytes = __resource.toOrginBytes();
+                            __outputBytes = __resource.toOrginBytes().ToArray();
                             break;
                         }
                 }

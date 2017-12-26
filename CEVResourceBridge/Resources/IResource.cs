@@ -1,14 +1,15 @@
 using System.Text;
 using System;
 using System.Xml;
+using CEVResourceBridge.Utils;
 namespace CEVResourceBridge.Resources
 {
     public interface IResource : IDisposable
     {
-        void fromOrginBytes(byte[] input);
-        void fromCustomBytes(byte[] input);
+        void fromOrginBytes(ByteArray input);
+        void fromCustomBytes(ByteArray input);
         XmlDocument toXML();
-        byte[] toOrginBytes();
-        byte[] toCustomBytes();
+        ByteArray toOrginBytes();
+        ByteArray toCustomBytes();
     }
 }
