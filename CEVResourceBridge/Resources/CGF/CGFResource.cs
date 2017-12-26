@@ -1,4 +1,5 @@
 using CEVResourceBridge.Resources;
+using System.Xml;
 namespace CEVResourceBridge.Resources.CGF
 {
     public class CGFResource : IResource
@@ -18,7 +19,7 @@ namespace CEVResourceBridge.Resources.CGF
 
         }
 
-        public string toXML()
+        public XmlDocument toXML()
         {
             return null;
         }
