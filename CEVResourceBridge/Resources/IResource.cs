@@ -1,3 +1,4 @@
+using System.Text;
 using System;
 namespace CEVResourceBridge.Resources
 {
@@ -5,6 +6,7 @@ namespace CEVResourceBridge.Resources
     {
         void fromOrginBytes(byte[] input);
         void fromCustomBytes(byte[] input);
+        string toXML();
         byte[] toOrginBytes();
         byte[] toCustomBytes();
     }

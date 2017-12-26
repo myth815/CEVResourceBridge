@@ -18,6 +18,11 @@ namespace CEVResourceBridge.Resources.CGF
 
         }
 
+        public string toXML()
+        {
+            return null;
+        }
+
         public byte[] toOrginBytes()
         {
             return null;
